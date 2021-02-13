@@ -73,7 +73,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Toxy">
-      <HintPath>..\..\Build\Net40\Debug\Toxy.dll</HintPath>
+      <HintPath>..\..\Build\Net40\$(Configuration)\Toxy.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

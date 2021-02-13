@@ -48,7 +48,7 @@
       <HintPath>..\..\packages\Thought.vCards.dll</HintPath>
     </Reference>
     <Reference Include="Toxy">
-      <HintPath>..\..\Build\Net40\Debug\Toxy.dll</HintPath>
+      <HintPath>..\..\Build\Net40\$(Configuration)\Toxy.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
