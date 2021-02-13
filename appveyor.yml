@@ -15,8 +15,8 @@ before_build:
 - nuget restore Toxy.Tools\Toxy.Tools.sln
 
 build_script:
-- msbuild Toxy-dotnet4.sln /t:Rebuild /p:Platform="$(platform)" /p:Configuration="$(configuration)"
-- msbuild Toxy.Tools\Toxy.Tools.sln /t:Rebuild /p:Platform="$(platform)" /p:Configuration="$(configuration)"
+- msbuild Toxy-dotnet4.sln /t:Rebuild /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%"
+- msbuild Toxy.Tools\Toxy.Tools.sln /t:Rebuild /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%"
 
 after_build:
 - ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Toxy.Tools\ToxyExtract\bin\$env:CONFIGURATION\ToxyExtract.exe").FileVersionInfo.ProductVersion
