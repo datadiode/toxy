@@ -1,0 +1,26 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+
+configuration:
+- Debug
+- Release
+
+platform: Any CPU
+
+environment:
+  EnableNuGetPackageRestore: true
+
+before_build:
+- nuget restore Toxy-dotnet4.sln
+- nuget restore Toxy.Tools\Toxy.Tools.sln
+
+build_script:
+- msbuild Toxy-dotnet4.sln /t:Rebuild /p:Platform="$(platform)" /p:Configuration="$(configuration)"
+- msbuild Toxy.Tools\Toxy.Tools.sln /t:Rebuild /p:Platform="$(platform)" /p:Configuration="$(configuration)"
+
+after_build:
+- ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Toxy.Tools\ToxyExtract\bin\$env:CONFIGURATION\ToxyExtract.exe").FileVersionInfo.ProductVersion
+
+artifacts:
+- path: Toxy.Tools\ToxyExtract\bin\$(configuration)
+  name: ToxyExtract_$(PRODUCT_VERSION)-$(configuration)
