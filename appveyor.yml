@@ -7,6 +7,8 @@ configuration:
 
 platform: Any CPU
 
+test: off
+
 environment:
   EnableNuGetPackageRestore: true
 
