@@ -300,7 +300,7 @@ namespace ExtractionViewer
             ssPanel.ReoGridControl.ColCount = table.LastColumnIndex + 1;
             ssPanel.ReoGridControl.RowCount = table.LastRowIndex + 2; 
             if(table.HasHeader)
-                foreach (var cell in table.ColumnHeaders.Cells)
+                foreach (var cell in table.HeaderRows[0].Cells)
                 {
                     ssPanel.ReoGridControl.SetCellData(new ReoGridPos(0, cell.CellIndex), cell.Value);
                 }

@@ -53,7 +53,7 @@
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NPOI 2.2.0.0\dotnet2\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\packages\NPOI 2.2.0.2\dotnet4\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
@@ -64,19 +64,19 @@
     <Reference Include="MsgReader">
       <HintPath>..\packages\msgreader\dotnet4\MsgReader.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+    <Reference Include="NPOI">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NPOI 2.2.0.2\dotnet4\NPOI.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI.OOXML, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+    <Reference Include="NPOI.OOXML">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NPOI 2.2.0.2\dotnet4\NPOI.OOXML.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI.OpenXml4Net, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+    <Reference Include="NPOI.OpenXml4Net">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NPOI 2.2.0.2\dotnet4\NPOI.OpenXml4Net.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+    <Reference Include="NPOI.OpenXmlFormats">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NPOI 2.2.0.2\dotnet4\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
