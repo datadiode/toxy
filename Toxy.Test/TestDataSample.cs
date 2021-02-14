@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Reflection;
 
 namespace Toxy.Test
 {
@@ -69,15 +70,9 @@ namespace Toxy.Test
         }
         public static string GetFilePath(string filename, string subFolder)
         {
-			string path = ConfigurationManager.AppSettings["testdataPath"].Replace('\\',Path.DirectorySeparatorChar);
-			if (!path.EndsWith(string.Empty+Path.DirectorySeparatorChar))
-            {
-				path += Path.DirectorySeparatorChar;
-            }
-            if(subFolder==null)
-                return path + filename;
-            else
-				return path +subFolder+Path.DirectorySeparatorChar + filename;
+            var root = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var path = ConfigurationManager.AppSettings["testdataPath"];
+            return Path.Combine(root, path, subFolder ?? string.Empty, filename);
         }
     }
 }

@@ -29,7 +29,8 @@ namespace Toxy.Test
             string path = TestDataSample.GetRTFPath("htmlrtf2.rtf");
             var parser = new RTFTextParser(new ParserContext(path));
             string result = parser.Parse();
-            Assert.IsNotNullOrEmpty(result);
+            Assert.IsNotNull(result);
+            Assert.IsNotEmpty(result);
         }
     }
 }

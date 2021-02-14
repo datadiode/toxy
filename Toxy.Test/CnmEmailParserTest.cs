@@ -17,7 +17,8 @@ namespace Toxy.Test
             ParserContext context = new ParserContext(path);
             IEmailParser parser = ParserFactory.CreateEmail(context) as IEmailParser;
             ToxyEmail email = parser.Parse();
-            Assert.IsNotNullOrEmpty(email.From);
+            Assert.IsNotNull(email.From);
+            Assert.IsNotEmpty(email.From);
             Assert.AreEqual(1, email.To.Count);
             Assert.AreEqual("Тюльпаны <info@beepy.net>", email.From);
             Assert.AreEqual("<maf@1gb.ru>", email.To[0]);

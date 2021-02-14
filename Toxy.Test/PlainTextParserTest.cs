@@ -15,7 +15,7 @@ namespace Toxy.Test
             ParserContext context=new ParserContext(path);
             ITextParser parser = ParserFactory.CreateText(context);
             string text= parser.Parse();
-			Assert.AreEqual("hello world"+Environment.NewLine+"a2"+Environment.NewLine+"a3"+Environment.NewLine+"bbb4"+Environment.NewLine, text);
+            Assert.AreEqual("hello world"+Environment.NewLine+"a2"+Environment.NewLine+"a3"+Environment.NewLine+"bbb4"+Environment.NewLine, text);
         }
 
         [Test]
@@ -44,7 +44,8 @@ namespace Toxy.Test
                 }
             };
             string text = parser.Parse();
-			Assert.IsNotNullOrEmpty (text);
+            Assert.IsNotNull(text);
+            Assert.IsNotEmpty(text);
         }
 
     }
