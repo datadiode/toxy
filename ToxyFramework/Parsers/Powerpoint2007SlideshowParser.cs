@@ -81,7 +81,6 @@ namespace Toxy.Parsers
                     throw new ArgumentOutOfRangeException(string.Format("This file only contains {0} slide(s).", slideIds.Count));
                 }
                 string relId = (slideIds[slideIndex] as SlideId).RelationshipId;
-                relId = (slideIds[slideIndex] as SlideId).RelationshipId;
 
                 // Get the slide part from the relationship ID.
                 SlidePart slide = (SlidePart)part.GetPartById(relId);
