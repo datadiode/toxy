@@ -30,11 +30,10 @@ namespace Toxy.Parsers
                 for (int index = 0; index < slideIds.Count; index++)
                 {
                     string relId = (slideIds[index] as SlideId).RelationshipId;
-                    relId = (slideIds[index] as SlideId).RelationshipId;
 
                     // Get the slide part from the relationship ID.
                     SlidePart slide = (SlidePart)part.GetPartById(relId);
-                    string[] texts=GetAllTextInSlide(slide);
+                    string[] texts = GetAllTextInSlide(slide);
                     foreach (string text in texts)
                     {
                         sb.AppendLine(text);
@@ -81,15 +80,8 @@ namespace Toxy.Parsers
                 }
             }
 
-            if (texts.Count > 0)
-            {
-                // Return an array of strings.
-                return texts.ToArray();
-            }
-            else
-            {
-                return null;
-            }
+            // Return an array of strings.
+            return texts.ToArray();
         }
     }
 }
