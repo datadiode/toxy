@@ -1,5 +1,5 @@
 ﻿// ToxyExtract - Command line tool to extract text from various kinds of files
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-only
 
 using System;
 using System.Collections;
