@@ -36,4 +36,4 @@ Email: support@neuzilla.com
 
 
 ## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftonyqus%2Ftoxy.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftonyqus%2Ftoxy?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdatadiode%2Ftoxy.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdatadiode%2Ftoxy?ref=badge_large)
