@@ -11,7 +11,7 @@ using System.Security;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Neuzilla")]
 [assembly: AssemblyProduct("Toxy")]
-[assembly: AssemblyCopyright("AGPL-3.0-or-later")]
+[assembly: AssemblyCopyright("AGPL-3.0-only")]
 [assembly: AssemblyTrademark("Neuzilla")]
 [assembly: AssemblyCulture("")]
 
