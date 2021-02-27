@@ -1,5 +1,4 @@
-﻿using HLIB.MailFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -21,19 +20,22 @@ namespace Toxy.Parsers
             StringBuilder sb = new StringBuilder();
             using (FileStream stream = File.OpenRead(Context.Path))
             {
-                EMLReader reader = new EMLReader(stream);
-                if (!string.IsNullOrEmpty(reader.From))
-                    sb.AppendFormat("[From] {0}{1}",reader.From, Environment.NewLine);
-                if (!string.IsNullOrEmpty(reader.To))
-                    sb.AppendFormat("[To] {0}{1}", reader.To, Environment.NewLine);
-                if (!string.IsNullOrEmpty(reader.CC))
-                    sb.AppendFormat("[CC] {0}{1}", reader.CC, Environment.NewLine);
-                if (!string.IsNullOrEmpty(reader.Subject))
-                    sb.AppendFormat("[Subject] {0}{1}", reader.Subject, Environment.NewLine);
-
+                var message = MsgReader.Mime.Message.Load(stream);
+                sb.Append("[From] ");
+                sb.AppendLine(message.Headers.From.Raw);
+                sb.Append("[To] ");
+                sb.AppendLine(String.Join(";", message.Headers.To));
+                if (message.Headers.Cc.Count != 0)
+                {
+                    sb.Append("[CC] ");
+                    sb.AppendLine(String.Join(";", message.Headers.Cc));
+                }
+                sb.Append("[Date] ");
+                sb.AppendLine(message.Headers.Date);
+                sb.Append("[Subject] ");
+                sb.AppendLine(message.Headers.Subject);
                 sb.AppendLine();
-                sb.AppendLine(reader.Body);
-                //sb.AppendLine(reader.HTMLBody);
+                sb.Append(message.TextBody.GetBodyAsText());
             }
             return sb.ToString();
         }

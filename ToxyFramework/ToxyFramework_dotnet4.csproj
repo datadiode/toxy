@@ -119,7 +119,6 @@
   <ItemGroup>
     <Compile Include="3rdParty\CnmFile.cs" />
     <Compile Include="3rdParty\DateTimeParser.cs" />
-    <Compile Include="3rdParty\EMLReader.cs" />
     <Compile Include="Entities\ToxyAddress.cs" />
     <Compile Include="Entities\ToxyBusinessCard\ToxyBusinessCard.cs" />
     <Compile Include="Entities\ToxyBusinessCard\ToxyBusinessCards.cs" />
