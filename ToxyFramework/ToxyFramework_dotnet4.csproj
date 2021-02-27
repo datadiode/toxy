@@ -66,8 +66,12 @@
     <Reference Include="LumenWorks.Framework.IO">
       <HintPath>..\packages\LumenWorks.Framework.IO.3.8.0\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
     </Reference>
-    <Reference Include="MsgReader">
-      <HintPath>..\packages\msgreader\dotnet4\MsgReader.dll</HintPath>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.0\lib\net40\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="MsgReader, Version=3.12.2.0, Culture=neutral, PublicKeyToken=3ba01cf3434959fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsgReader.3.12.2-datadiode-6-gd45240e-Release\lib\net40\MsgReader.dll</HintPath>
     </Reference>
     <Reference Include="NPOI">
       <SpecificVersion>False</SpecificVersion>
@@ -89,10 +93,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NPOI 2.2.0.2\dotnet4\NPOI.ScratchPad.HWPF.dll</HintPath>
     </Reference>
+    <Reference Include="OpenMcdf, Version=2.2.1.9, Culture=neutral, PublicKeyToken=fdbb1629d7c00800, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMcdf.2.2.1.9\lib\net40\OpenMcdf.dll</HintPath>
+    </Reference>
+    <Reference Include="RtfPipe, Version=2.0.7677.4303, Culture=neutral, PublicKeyToken=5f6ab4ce530296d2, processorArchitecture=MSIL">
+      <HintPath>..\packages\RtfPipe.2.0.7677.4303\lib\net40\RtfPipe.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="taglib-sharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
