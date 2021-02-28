@@ -2,6 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Globalization;
 using NUnit.Framework;
 
 namespace Toxy.Test
@@ -14,9 +16,7 @@ namespace Toxy.Test
     {
         public Excel2003ParserTest()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
         }
         [Test]
         public void TestExtractFooter()
