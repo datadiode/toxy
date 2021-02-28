@@ -112,7 +112,7 @@
       <HintPath>..\packages\taglib-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Thought.vCards">
-      <HintPath>..\packages\Thought.vCards.dll</HintPath>
+      <HintPath>..\packages\Thought.vCards.1.0.0-datadiode-6-gcb1c914-Release\lib\net40\Thought.vCards.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
