@@ -20,12 +20,12 @@ namespace Toxy.Test
             Assert.IsNotNull(email.From);
             Assert.IsNotEmpty(email.From);
             Assert.AreEqual(1, email.To.Count);
-            Assert.AreEqual("=?utf-8?B?5ouJ5Yu+572R?= <service@email.lagou.com>", email.From);
-            Assert.AreEqual("tonyqus@163.com", email.To[0]);
+            Assert.AreEqual(email.From, "\u62C9\u52FE\u7F51 <service@email.lagou.com>");
+            Assert.AreEqual(email.To[0], "tonyqus@163.com");
 
-            Assert.IsTrue(email.Subject.StartsWith("=?utf-8?B?5LiK5rW35YiG5LyX5b635bOw5bm/5ZGK?= =?utf-8?B?5Lyg5p"));
-            Assert.IsTrue(email.TextBody.StartsWith("------=_Part_4546_1557510524.1418357602217\r\nContent-Type: text"));
-            Assert.IsNull(email.HtmlBody);
+            Assert.AreEqual(email.Subject, "\u4E0A\u6D77\u5206\u4F17\u5FB7\u5CF0\u5E7F\u544A\u4F20\u64AD\u6709\u9650\u516C\u53F8-\u9AD8\u7EA7.NET\u8F6F\u4EF6\u5DE5\u7A0B\u5E08\u62DB\u8058\u53CD\u9988\u901A\u77E5");
+            Assert.IsTrue(email.HtmlBody.StartsWith("<html>\r\n"));
+            Assert.IsNull(email.TextBody);
 
         }
     }

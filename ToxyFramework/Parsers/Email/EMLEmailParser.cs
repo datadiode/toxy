@@ -25,8 +25,10 @@ namespace Toxy.Parsers
                 email.To = new List<string>(String.Join(";", message.Headers.To).Split(';'));
                 if (message.Headers.Cc.Count != 0)
                     email.Cc = new List<string>(String.Join(";", message.Headers.Cc).Split(';'));
-                email.TextBody = message.TextBody.GetBodyAsText();
-                email.HtmlBody = message.HtmlBody.GetBodyAsText();
+                if (message.TextBody != null)
+                    email.TextBody = message.TextBody.GetBodyAsText();
+                if (message.HtmlBody != null)
+                    email.HtmlBody = message.HtmlBody.GetBodyAsText();
                 email.Subject = message.Headers.Subject;
                 email.ArrivalTime = message.Headers.DateSent; // well, not quite correct
             }

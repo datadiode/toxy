@@ -34,8 +34,16 @@ namespace Toxy.Parsers
                 sb.AppendLine(message.Headers.Date);
                 sb.Append("[Subject] ");
                 sb.AppendLine(message.Headers.Subject);
-                sb.AppendLine();
-                sb.Append(message.TextBody.GetBodyAsText());
+                if (message.TextBody != null)
+                {
+                    sb.AppendLine();
+                    sb.Append(message.TextBody.GetBodyAsText());
+                }
+                if (message.HtmlBody != null)
+                {
+                    sb.AppendLine();
+                    sb.Append(message.HtmlBody.GetBodyAsText());
+                }
             }
             return sb.ToString();
         }
