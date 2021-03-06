@@ -1,6 +1,12 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+###############################################################################
+# Leave sample files as is.
+###############################################################################
+*.msg binary
+*.eml binary
+
 # Custom for Visual Studio
 *.cs     diff=csharp
 *.sln    merge=union
