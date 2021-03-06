@@ -20,13 +20,16 @@ namespace Toxy.Parsers
             FileInfo fi = new FileInfo(Context.Path);
             CnmFile reader = new CnmFile(fi);
             reader.Parse();
-            ToxyEmail email=new ToxyEmail();
+            ToxyEmail email = new ToxyEmail();
             email.From = reader.From;
             email.To = new List<string>(reader.To.Split(';'));
             email.TextBody = reader.TextPlain;
-            using (var sr=new StreamReader(reader.TextHtml))
+            if (reader.TextHtml != null)
             {
-                email.HtmlBody = sr.ReadToEnd();
+                using (var sr = new StreamReader(reader.TextHtml))
+                {
+                    email.HtmlBody = sr.ReadToEnd();
+                }
             }
             email.Subject = reader.Subject;
             return email;
