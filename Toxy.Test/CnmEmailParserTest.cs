@@ -21,7 +21,7 @@ namespace Toxy.Test
             Assert.IsNotEmpty(email.From);
             Assert.AreEqual(1, email.To.Count);
             Assert.AreEqual("Тюльпаны <info@beepy.net>", email.From);
-            Assert.AreEqual("<maf@1gb.ru>", email.To[0]);
+            Assert.AreEqual("maf@1gb.ru", email.To[0]);
 
             Assert.AreEqual("Тюльпаны", email.Subject);
             Assert.IsTrue(email.TextBody.StartsWith("Тел: 960-51-57;Продажа тюльпанов"));

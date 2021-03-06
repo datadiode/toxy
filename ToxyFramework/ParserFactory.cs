@@ -93,10 +93,7 @@ namespace Toxy
             typeEml.Add(typeof(EMLEmailParser));
             typeEml.Add(typeof(EMLTextParser));
             parserMapping.Add(".eml", typeEml);
-
-            var typeCnm = new List<Type>();
-            typeCnm.Add(typeof(CnmEmailParser));
-            parserMapping.Add(".cnm", typeCnm);
+            parserMapping.Add(".cnm", typeEml);
 
             var typeMsg = new List<Type>();
             typeMsg.Add(typeof(MsgEmailParser));
