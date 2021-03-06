@@ -6,6 +6,7 @@
 ###############################################################################
 *.msg binary
 *.eml binary
+*.cnm binary
 
 # Custom for Visual Studio
 *.cs     diff=csharp
