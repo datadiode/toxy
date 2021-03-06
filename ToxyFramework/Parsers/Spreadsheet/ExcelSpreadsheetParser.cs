@@ -10,6 +10,16 @@ namespace Toxy.Parsers
 {
     public class ExcelSpreadsheetParser : ISpreadsheetParser
     {
+        private class RowListComparer : IComparer<ToxyRow>
+        {
+            public int Compare(ToxyRow x, ToxyRow y) => x.RowIndex - y.RowIndex;
+            public static readonly RowListComparer Instance = new RowListComparer();
+        }
+        private class CellListComparer : IComparer<ToxyCell>
+        {
+            public int Compare(ToxyCell x, ToxyCell y) => x.CellIndex - y.CellIndex;
+            public static readonly CellListComparer Instance = new CellListComparer();
+        }
         public ExcelSpreadsheetParser(ParserContext context)
         {
             this.Context = context;
@@ -121,10 +131,6 @@ namespace Toxy.Parsers
                         {
                             tr.Cells.Add(c);
                         }
-                        if (includeComment && cell.CellComment != null)
-                        {
-                            c.Comment = cell.CellComment.String.String;
-                        }
                     }
                 }
                 if (tr != null)
@@ -138,6 +144,33 @@ namespace Toxy.Parsers
                 if (firstRow)
                 {
                     firstRow = false;
+                }
+            }
+            if (includeComment)
+            {
+                foreach (var keyValuePair in sheet.GetCellComments())
+                {
+                    var tr = new ToxyRow(keyValuePair.Key.Row);
+                    var i = table.Rows.BinarySearch(tr, RowListComparer.Instance);
+                    if (i >= 0)
+                    {
+                        tr = table.Rows[i];
+                    }
+                    else
+                    {
+                        table.Rows.Insert(~i, tr);
+                    }
+                    var c = new ToxyCell(keyValuePair.Key.Column, null);
+                    var j = tr.Cells.BinarySearch(c, CellListComparer.Instance);
+                    if (j >= 0)
+                    {
+                        c = tr.Cells[j];
+                    }
+                    else
+                    {
+                        tr.Cells.Insert(~j, c);
+                    }
+                    c.Comment = keyValuePair.Value.String.String;
                 }
             }
             for (int j = 0; j < sheet.NumMergedRegions; j++)
