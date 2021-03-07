@@ -48,6 +48,8 @@ namespace Toxy.Parsers
                 metadatas.Add("Creator", tags.Creator);
             if (!string.IsNullOrEmpty(tags.Comment))
                 metadatas.Add("Comment", tags.Comment);
+            if (!string.IsNullOrEmpty(tags.Description))
+                metadatas.Add("Comment", tags.Description); // TODO: sort this out
             if (tags.Rating != null)
                 metadatas.Add("Rating", (uint)tags.Rating);
             if (tags.Software != null)

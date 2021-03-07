@@ -48,6 +48,8 @@ namespace Toxy.Parsers
                     metadatas.Add("Performers", tag1.JoinedPerformers);
                 if (tag1.Comment != null)
                     metadatas.Add("Comment", tag1.Comment);
+                if (tag1.Description != null)
+                    metadatas.Add("Comment", tag1.Description); // TODO: sort this out
                 if (tag1.Conductor != null)
                     metadatas.Add("Conductor", tag1.Conductor);
                 if (tag1.Copyright != null)
