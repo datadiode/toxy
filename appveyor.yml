@@ -17,12 +17,13 @@ before_build:
 - nuget restore Toxy.Tools\Toxy.Tools.sln
 
 build_script:
-- msbuild Toxy-dotnet4.sln /t:Rebuild /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%"
-- msbuild Toxy.Tools\Toxy.Tools.sln /t:Rebuild /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%"
+- for /f "tokens=1,* delims=-" %%a in ('"git describe --long --tags --match v*"') do set version_suffix=%%b
+- msbuild /t:Rebuild /p:VersionSuffix="%version_suffix%-%CONFIGURATION%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy-dotnet4.sln
+- msbuild /t:Rebuild /p:VersionSuffix="%version_suffix%-%CONFIGURATION%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.Tools\Toxy.Tools.sln
 
 after_build:
-- ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Toxy.Tools\ToxyExtract\bin\$env:CONFIGURATION\ToxyExtract.exe").FileVersionInfo.ProductVersion
+- ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Toxy.Tools\ToxyExtract\bin\$env:CONFIGURATION\net40\ToxyExtract.exe").FileVersionInfo.ProductVersion
 
 artifacts:
-- path: Toxy.Tools\ToxyExtract\bin\$(configuration)
+- path: Toxy.Tools\ToxyExtract\bin\$(configuration)\net40
   name: ToxyExtract_$(PRODUCT_VERSION)-$(configuration)
