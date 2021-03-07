@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1259
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractionViewer", "ExtractionViewer\ExtractionViewer.csproj", "{C868FA3C-4E7B-4AE3-B440-5838A53FE672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtractionViewer", "ExtractionViewer\ExtractionViewer.csproj", "{C868FA3C-4E7B-4AE3-B440-5838A53FE672}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicateContactMerger", "DuplicateContactMerger\DuplicateContactMerger.csproj", "{B6B3FAD4-3481-4B27-B81A-CB7E8A106AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuplicateContactMerger", "DuplicateContactMerger\DuplicateContactMerger.csproj", "{B6B3FAD4-3481-4B27-B81A-CB7E8A106AD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToxyExtract", "ToxyExtract\ToxyExtract.csproj", "{B60055EB-AA3D-4DD0-8E21-D228ADA54E5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToxyExtract", "ToxyExtract\ToxyExtract.csproj", "{B60055EB-AA3D-4DD0-8E21-D228ADA54E5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

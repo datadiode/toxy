@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1259
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToxyFramework_dotnet4", "ToxyFramework\ToxyFramework_dotnet4.csproj", "{CCB814A5-A750-4B96-AFD3-F7E4D868F231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToxyFramework_dotnet4", "ToxyFramework\ToxyFramework_dotnet4.csproj", "{CCB814A5-A750-4B96-AFD3-F7E4D868F231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toxy.Test", "Toxy.Test\Toxy.Test.csproj", "{E16C30D3-D4EB-4608-A292-5BCFBE86F230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toxy.Test", "Toxy.Test\Toxy.Test.csproj", "{E16C30D3-D4EB-4608-A292-5BCFBE86F230}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
