@@ -49,9 +49,6 @@
     </AssemblyAttribute>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DCSoft.RTF">
-      <HintPath>..\packages\DCSoft.RTF.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -140,6 +137,7 @@
     <PackageReference Include="LumenWorksCsvReader" Version="4.0.0" />
     <PackageReference Include="MsgReader" Version="3.12.2-datadiode-6-gd45240e-Release" />
     <PackageReference Include="NPOI" Version="2.5.2-datadiode-26-g97ea8e9a-Release" />
+    <PackageReference Include="RtfDomParser" Version="1.0.0" />
     <PackageReference Include="Thought.vCards" Version="1.0.0-datadiode-6-gcb1c914-Release" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -26,4 +26,4 @@ after_build:
 
 artifacts:
 - path: Toxy.Tools\ToxyExtract\bin\$(configuration)\net40
-  name: ToxyExtract_$(PRODUCT_VERSION)-$(configuration)
+  name: ToxyExtract_$(PRODUCT_VERSION)
