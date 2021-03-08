@@ -11,14 +11,14 @@ namespace ToxyExtract
 {
     class Program
     {
-        const string Usage = "Usage: ToxyExtract [/encoding ...] [/extension ...] <inputfile>";
+        const string Usage = "Usage: ToxyExtract [/encoding ...] [/text] [/metadata] <inputfile>";
 
-        static string ReadDocument(string filepath, string encoding, string extension)
+        [Flags]
+        enum Flags
         {
-            ParserContext context = new ParserContext(filepath);
-            context.Encoding = Encoding.GetEncoding(encoding);
-            var tparser = ParserFactory.CreateText(context);
-            return tparser.Parse();
+            None = 0,
+            Text = 1,
+            Metadata = 2,
         }
 
         static int Main(string[] args)
@@ -27,8 +27,9 @@ namespace ToxyExtract
             {
                 Console.OutputEncoding = Encoding.UTF8;
 
-                string encoding = "UTF-8";
-                string extension = null;
+                var encoding = "UTF-8";
+                var flags = Flags.None;
+                var caught = Flags.None;
 
                 var arguments = new ArrayList(args);
                 int i;
@@ -41,14 +42,15 @@ namespace ToxyExtract
                         arguments.RemoveAt(i);
                     }
                 }
-                if ((i = arguments.IndexOf("/extension")) != -1)
+                if ((i = arguments.IndexOf("/text")) != -1)
                 {
                     arguments.RemoveAt(i);
-                    if (i < arguments.Count)
-                    {
-                        extension = (string)arguments[i];
-                        arguments.RemoveAt(i);
-                    }
+                    flags |= Flags.Text;
+                }
+                if ((i = arguments.IndexOf("/metadata")) != -1)
+                {
+                    arguments.RemoveAt(i);
+                    flags |= Flags.Metadata;
                 }
 
                 if (arguments.Count != 1)
@@ -57,27 +59,78 @@ namespace ToxyExtract
                     return arguments.Count;
                 }
 
-                string filepath = (string)arguments[0];
+                var filepath = (string)arguments[0];
 
-                if (extension == null)
+                ParserContext context = new ParserContext(filepath);
+                context.Encoding = Encoding.GetEncoding(encoding);
+
+                ITextParser tparser = null;
+                if (flags == Flags.None || (flags & Flags.Text) != 0)
                 {
-                    FileInfo fi = new FileInfo(filepath);
-                    extension = fi.Extension.ToLower();
+                    try
+                    {
+                        tparser = ParserFactory.CreateText(context);
+                    }
+                    catch (Exception e)
+                    {
+                        if (flags == Flags.None)
+                        {
+                            flags = Flags.Metadata;
+                        }
+                        else
+                        {
+                            caught |= Flags.Text;
+                            Console.WriteLine(e);
+                        }
+                    }
                 }
 
-                var text = ReadDocument(filepath, encoding, extension);
-                if (text.EndsWith("\r")) // as seems to happen with .doc files
+                if ((flags & Flags.Metadata) != 0)
                 {
-                    text = text.Replace('\r', '\n');
+                    try
+                    {
+                        var parser = ParserFactory.CreateMetadata(context);
+                        Console.WriteLine(string.Format("[{0}]", parser.GetType().Name));
+                        var metadatas = parser.Parse();
+                        foreach (var data in metadatas)
+                        {
+                            Console.WriteLine(string.Format("{0} = {1}", data.Name.PadRight(23), data.Value.ToString()));
+                        }
+                        Console.WriteLine();
+                    }
+                    catch (Exception e)
+                    {
+                        caught |= Flags.Metadata;
+                        Console.WriteLine(e);
+                    }
                 }
 
-                Console.Write(text);
-                return 0;
+                if (tparser != null)
+                {
+                    try
+                    {
+                        if ((flags & Flags.Text) != 0)
+                            Console.WriteLine(string.Format("[{0}]", tparser.GetType().Name));
+                        var text = tparser.Parse();
+                        if (text.EndsWith("\r")) // as seems to happen with .doc files
+                        {
+                            text = text.Replace('\r', '\n');
+                        }
+                        Console.Write(text);
+                    }
+                    catch (Exception e)
+                    {
+                        caught |= Flags.Text;
+                        Console.WriteLine(e);
+                    }
+                }
+
+                return (int)caught;
             }
             catch (Exception e)
             {
                 Console.Write(e);
-                return 9;
+                return -1;
             }
         }
     }
