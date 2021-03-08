@@ -9,17 +9,10 @@ platform: Any CPU
 
 test: on
 
-environment:
-  EnableNuGetPackageRestore: true
-
-before_build:
-- nuget restore Toxy-dotnet4.sln
-- nuget restore Toxy.Tools\Toxy.Tools.sln
-
 build_script:
 - for /f "tokens=1,* delims=-" %%a in ('"git describe --long --tags --match v*"') do set version_suffix=%%b
-- msbuild /t:Rebuild /p:VersionSuffix="%version_suffix%-%CONFIGURATION%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy-dotnet4.sln
-- msbuild /t:Rebuild /p:VersionSuffix="%version_suffix%-%CONFIGURATION%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.Tools\Toxy.Tools.sln
+- msbuild /t:Restore,Rebuild /p:RestorePackagesConfig=true /p:VersionSuffix="%version_suffix%-%CONFIGURATION%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.sln
+- msbuild /t:Restore,Rebuild /p:RestorePackagesConfig=true /p:VersionSuffix="%version_suffix%-%CONFIGURATION%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.Tools\Toxy.Tools.sln
 
 after_build:
 - ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Toxy.Tools\ToxyExtract\bin\$env:CONFIGURATION\net40\ToxyExtract.exe").FileVersionInfo.ProductVersion
