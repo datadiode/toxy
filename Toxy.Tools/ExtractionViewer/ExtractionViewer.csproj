@@ -40,15 +40,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DCSoft.RTF">
-      <HintPath>..\..\packages\DCSoft.RTF.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.11.31.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.11.31\lib\Net40\HtmlAgilityPack.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.1.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpZipLib.1.3.1-datadiode-9-gf7ac569-Release\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -60,9 +51,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Thought.vCards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5c7cb95db737c42d, processorArchitecture=MSIL">
-      <HintPath>..\packages\Thought.vCards.1.0.0-datadiode-6-gcb1c914-Release\lib\net40\Thought.vCards.dll</HintPath>
-    </Reference>
     <Reference Include="Toxy">
       <HintPath>..\..\Build\$(Configuration)\$(TargetFramework)\Toxy.dll</HintPath>
     </Reference>
@@ -145,7 +133,6 @@
     <EmbeddedResource Include="TreeViewPanel.resx">
       <DependentUpon>TreeViewPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

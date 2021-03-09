@@ -46,9 +46,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Thought.vCards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5c7cb95db737c42d, processorArchitecture=MSIL">
-      <HintPath>..\packages\Thought.vCards.1.0.0-datadiode-6-gcb1c914-Release\lib\net40\Thought.vCards.dll</HintPath>
-    </Reference>
     <Reference Include="Toxy">
       <HintPath>..\..\Build\$(Configuration)\$(TargetFramework)\Toxy.dll</HintPath>
     </Reference>
@@ -73,7 +70,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
