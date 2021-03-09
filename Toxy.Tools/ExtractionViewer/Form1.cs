@@ -297,25 +297,25 @@ namespace ExtractionViewer
         private void ShowToGrid(ToxyTable table)
         {
             ssPanel.ReoGridControl.Reset();
-            ssPanel.ReoGridControl.ColCount = table.LastColumnIndex + 1;
-            ssPanel.ReoGridControl.RowCount = table.LastRowIndex + 2; 
+            ssPanel.ReoGridControl.CurrentWorksheet.ColumnCount = table.LastColumnIndex + 1;
+            ssPanel.ReoGridControl.CurrentWorksheet.RowCount = table.LastRowIndex + 2; 
             if(table.HasHeader)
                 foreach (var cell in table.HeaderRows[0].Cells)
                 {
-                    ssPanel.ReoGridControl.SetCellData(new ReoGridPos(0, cell.CellIndex), cell.Value);
+                    ssPanel.ReoGridControl.CurrentWorksheet.SetCellData(0, cell.CellIndex, cell.Value);
                 }
             foreach (var row in table.Rows)
             {
                 foreach (var cell in row.Cells)
                 {
-                    ssPanel.ReoGridControl.SetCellData(new ReoGridPos(row.RowIndex+1, cell.CellIndex), cell.Value);
+                    ssPanel.ReoGridControl.CurrentWorksheet.SetCellData(row.RowIndex + 1, cell.CellIndex, cell.Value);
                 }
             }
             foreach (var cellrange in table.MergeCells)
             {
-                ssPanel.ReoGridControl.MergeRange(new ReoGridRange(
-                    new ReoGridPos(cellrange.FirstRow, cellrange.FirstColumn),
-                    new ReoGridPos(cellrange.LastRow, cellrange.LastColumn)));
+                ssPanel.ReoGridControl.CurrentWorksheet.MergeRange(new RangePosition(
+                    new CellPosition(cellrange.FirstRow, cellrange.FirstColumn),
+                    new CellPosition(cellrange.LastRow, cellrange.LastColumn)));
             }
         }
         private void btnReopen_Click(object sender, EventArgs e)

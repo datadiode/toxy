@@ -42,13 +42,8 @@ namespace ExtractionViewer
 
             this.reoGridControl1 = new ReoGridControl();
             this.reoGridControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.reoGridControl1.CellContextMenuStrip = null;
-            this.reoGridControl1.ColCount = 100;
-            this.reoGridControl1.ColHeadContextMenuStrip = null;
             this.reoGridControl1.Location = new System.Drawing.Point(189, 243);
             this.reoGridControl1.Name = "reoGridControl1";
-            this.reoGridControl1.RowCount = 200;
-            this.reoGridControl1.RowHeadContextMenuStrip = null;
             this.reoGridControl1.Script = null;
             this.reoGridControl1.Dock = DockStyle.Fill;
             this.reoGridControl1.TabIndex = 0;

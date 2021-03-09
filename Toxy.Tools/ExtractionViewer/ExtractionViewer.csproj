@@ -54,10 +54,6 @@
     <Reference Include="Toxy">
       <HintPath>..\..\Build\$(Configuration)\$(TargetFramework)\Toxy.dll</HintPath>
     </Reference>
-    <Reference Include="unvell.ReoGrid, Version=0.8.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\ReoGrid-0.8.5-Editor\unvell.ReoGrid.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutBox1.cs">
@@ -147,6 +143,9 @@
     <Content Include="History.txt" />
     <Content Include="KnownIssues.txt" />
     <Content Include="License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="unvell.ReoGrid.dll" Version="2.2.0" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
