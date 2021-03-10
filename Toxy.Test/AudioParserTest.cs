@@ -65,5 +65,68 @@ namespace Toxy.Test
             ToxyMetadata x = parser.Parse();
             Assert.AreEqual(16, x.Count);
         }
+        [Test]
+        public void TestParseAif()
+        {
+            string path = Path.GetFullPath(TestDataSample.GetAudioPath("sample.aif"));
+            ParserContext context = new ParserContext(path);
+            IMetadataParser parser = (IMetadataParser)ParserFactory.CreateMetadata(context);
+            ToxyMetadata x = parser.Parse();
+            Assert.AreEqual(13, x.Count);
+        }
+        [Test]
+        public void TestParseOgg()
+        {
+            string path = Path.GetFullPath(TestDataSample.GetAudioPath("sample.ogg"));
+            ParserContext context = new ParserContext(path);
+            IMetadataParser parser = (IMetadataParser)ParserFactory.CreateMetadata(context);
+            ToxyMetadata x = parser.Parse();
+            Assert.AreEqual(15, x.Count);
+        }
+        [Test]
+        public void TestParseMpc()
+        {
+            string path = Path.GetFullPath(TestDataSample.GetAudioPath("sample.mpc"));
+            ParserContext context = new ParserContext(path);
+            IMetadataParser parser = (IMetadataParser)ParserFactory.CreateMetadata(context);
+            ToxyMetadata x = parser.Parse();
+            Assert.AreEqual(14, x.Count);
+        }
+        [Test]
+        public void TestParseAac()
+        {
+            string path = Path.GetFullPath(TestDataSample.GetAudioPath("sample.aac"));
+            ParserContext context = new ParserContext(path);
+            IMetadataParser parser = (IMetadataParser)ParserFactory.CreateMetadata(context);
+            ToxyMetadata x = parser.Parse();
+            Assert.AreEqual(12, x.Count);
+        }
+        [Test]
+        public void TestParseM4a()
+        {
+            string path = Path.GetFullPath(TestDataSample.GetAudioPath("sample.m4a"));
+            ParserContext context = new ParserContext(path);
+            IMetadataParser parser = (IMetadataParser)ParserFactory.CreateMetadata(context);
+            ToxyMetadata x = parser.Parse();
+            Assert.AreEqual(13, x.Count);
+        }
+        [Test]
+        public void TestParseM4v()
+        {
+            string path = Path.GetFullPath(TestDataSample.GetAudioPath("sample.m4v"));
+            ParserContext context = new ParserContext(path);
+            IMetadataParser parser = (IMetadataParser)ParserFactory.CreateMetadata(context);
+            ToxyMetadata x = parser.Parse();
+            Assert.AreEqual(10, x.Count);
+        }
+        [Test]
+        public void TestParseAvi()
+        {
+            string path = Path.GetFullPath(TestDataSample.GetAudioPath("sample.avi"));
+            ParserContext context = new ParserContext(path);
+            IMetadataParser parser = (IMetadataParser)ParserFactory.CreateMetadata(context);
+            ToxyMetadata x = parser.Parse();
+            Assert.AreEqual(12, x.Count);
+        }
     }
 }

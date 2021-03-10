@@ -117,6 +117,12 @@ namespace Toxy
             parserMapping.Add(".wma", typeAudio);
             parserMapping.Add(".flac", typeAudio);
             parserMapping.Add(".aif", typeAudio);
+            parserMapping.Add(".ogg", typeAudio);
+            parserMapping.Add(".mpc", typeAudio);
+            parserMapping.Add(".aac", typeAudio);
+            parserMapping.Add(".m4a", typeAudio);
+            parserMapping.Add(".m4v", typeAudio);
+            parserMapping.Add(".avi", typeAudio);
 
             var typeImage = new List<Type>();
             typeImage.Add(typeof(ImageMetadataParser));
