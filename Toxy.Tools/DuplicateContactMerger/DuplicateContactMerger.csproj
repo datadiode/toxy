@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <VersionPrefix>1.6.0</VersionPrefix>
+    <Version>1.6.0@(VersionSuffix)</Version>
     <AssemblyVersion>1.6.0.0</AssemblyVersion>
     <FileVersion>1.6.0.0</FileVersion>
     <Copyright>Copyright © 2014</Copyright>
+    <AssemblyTitle>Duplicate Contact Merger ($(Configuration))</AssemblyTitle>
     <ProjectGuid>{B6B3FAD4-3481-4B27-B81A-CB7E8A106AD8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DuplicateContactMerger</RootNamespace>
@@ -95,4 +96,5 @@
   <PropertyGroup>
     <PostBuildEvent>copy /y $(SolutionDir)..\LICENSE</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)Common.targets" />
 </Project>

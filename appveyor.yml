@@ -10,14 +10,12 @@ platform: Any CPU
 test: on
 
 build_script:
-- for /f "tokens=1,* delims=-" %%a in ('"git describe --long --tags --match v*"') do set version_suffix=%%b
-- if not "%CONFIGURATION%"=="Release" set version_suffix=%version_suffix%-%CONFIGURATION%
-- msbuild /t:Restore,Rebuild /p:RestorePackagesConfig=true /p:VersionSuffix="%version_suffix%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.sln
-- msbuild /t:Restore,Rebuild /p:RestorePackagesConfig=true /p:VersionSuffix="%version_suffix%" /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.Tools\Toxy.Tools.sln
+- msbuild /t:Restore,Rebuild /p:RestorePackagesConfig=true /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.sln
+- msbuild /t:Restore,Rebuild /p:RestorePackagesConfig=true /p:Platform="%PLATFORM%" /p:Configuration="%CONFIGURATION%" Toxy.Tools\Toxy.Tools.sln
 
 after_build:
 - ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Toxy.Tools\ToxyExtract\bin\$env:CONFIGURATION\net40\ToxyExtract.exe").FileVersionInfo.ProductVersion
 
 artifacts:
 - path: Toxy.Tools\ToxyExtract\bin\$(configuration)\net40
-  name: ToxyExtract_$(PRODUCT_VERSION)
+  name: ToxyExtract_$(PRODUCT_VERSION)-$(configuration)

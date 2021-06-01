@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <VersionPrefix>1.6.0</VersionPrefix>
+    <Version>1.6.0@(VersionSuffix)</Version>
     <AssemblyVersion>1.6.0.0</AssemblyVersion>
     <FileVersion>1.6.0.0</FileVersion>
     <Company>Neuzilla</Company>
     <Copyright>Copyright © 2021</Copyright>
-    <AssemblyTitle>ToxyExtract</AssemblyTitle>
+    <AssemblyTitle>ToxyExtract ($(Configuration))</AssemblyTitle>
     <ProjectGuid>{B60055EB-AA3D-4DD0-8E21-D228ADA54E5C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ToxyExtract</RootNamespace>
@@ -56,4 +56,5 @@
   <PropertyGroup>
     <PostBuildEvent>copy /y $(SolutionDir)..\LICENSE</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)Common.targets" />
 </Project>

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <VersionPrefix>1.6.0</VersionPrefix>
+    <Version>1.6.0@(VersionSuffix)</Version>
     <AssemblyVersion>1.6.0.0</AssemblyVersion>
     <FileVersion>1.6.0.0</FileVersion>
     <Company>Neuzilla</Company>
     <Copyright>Copyright © 2014</Copyright>
-    <AssemblyTitle>Toxy Extraction Viewer</AssemblyTitle>
+    <AssemblyTitle>Toxy Extraction Viewer ($(Configuration))</AssemblyTitle>
     <Description>This is a visual tool of Toxy framework, which is used to view extracted data. \r\n\r\nYou can contact tonyqus@163.com for customization service.</Description>
     <ProjectGuid>{C868FA3C-4E7B-4AE3-B440-5838A53FE672}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -157,4 +157,5 @@
   <PropertyGroup>
     <PostBuildEvent>copy /y $(SolutionDir)..\LICENSE</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)Common.targets" />
 </Project>

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <VersionPrefix>1.6.0</VersionPrefix>
+    <Version>1.6.0@(VersionSuffix)</Version>
     <AssemblyVersion>1.6.0.0</AssemblyVersion>
     <FileVersion>1.6.0.0</FileVersion>
     <Company>Neuzilla</Company>
     <Copyright>AGPL-3.0-only</Copyright>
-    <AssemblyTitle>Toxy Framework</AssemblyTitle>
+    <AssemblyTitle>Toxy Framework ($(Configuration))</AssemblyTitle>
     <Description>.Net Data/Text Extraction Framework</Description>
     <ProjectGuid>{CCB814A5-A750-4B96-AFD3-F7E4D868F231}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -138,11 +138,5 @@
     <PackageReference Include="TagLibSharp" Version="2.2.0-datadiode-1-g33d478c-Release" />
     <PackageReference Include="Thought.vCards" Version="1.0.0-datadiode-6-gcb1c914-Release" />
   </ItemGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(SolutionDir)Common.targets" />
 </Project>

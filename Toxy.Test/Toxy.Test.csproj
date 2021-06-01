@@ -3,11 +3,12 @@
   <Import Project="..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props')" />
   <Import Project="..\packages\NUnit.3.13.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.1\build\NUnit.props')" />
   <PropertyGroup>
-    <VersionPrefix>1.6.0</VersionPrefix>
+    <Version>1.6.0@(VersionSuffix)</Version>
     <AssemblyVersion>1.6.0.0</AssemblyVersion>
     <FileVersion>1.6.0.0</FileVersion>
     <Company>Neuzilla</Company>
     <Copyright>AGPL-3.0-only</Copyright>
+    <AssemblyTitle>Toxy Test ($(Configuration))</AssemblyTitle>
     <ProjectGuid>{E16C30D3-D4EB-4608-A292-5BCFBE86F230}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Toxy.Test</RootNamespace>
@@ -86,11 +87,5 @@
   <ItemGroup>
     <Reference Include="System.Configuration" />
   </ItemGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(SolutionDir)Common.targets" />
 </Project>
