@@ -33,13 +33,16 @@ namespace Toxy
             typeXls.Add(typeof(ExcelTextParser));
             typeXls.Add(typeof(OLE2MetadataParser));
             parserMapping.Add(".xls", typeXls);
+            parserMapping.Add(".xlt", typeXls);
 
             var typeXlsx = new List<Type>();
             typeXlsx.Add(typeof(ExcelSpreadsheetParser));
             typeXlsx.Add(typeof(ExcelTextParser));
             typeXlsx.Add(typeof(OOXMLMetadataParser));
             parserMapping.Add(".xlsx", typeXlsx);
-
+            parserMapping.Add(".xlsm", typeXlsx);
+            parserMapping.Add(".xltx", typeXlsx);
+            parserMapping.Add(".xltm", typeXlsx);
 
             var typeOLE2 = new List<Type>();
             typeOLE2.Add(typeof(OLE2MetadataParser));
@@ -65,12 +68,16 @@ namespace Toxy
             typeDoc.Add(typeof(Word2003TextParser));
             typeDoc.Add(typeof(OLE2MetadataParser));
             parserMapping.Add(".doc", typeDoc);
+            parserMapping.Add(".dot", typeDoc);
 
             var typeDocx = new List<Type>();
             typeDocx.Add(typeof(Word2007TextParser));
             typeDocx.Add(typeof(Word2007DocumentParser));
             typeDocx.Add(typeof(OOXMLMetadataParser));
             parserMapping.Add(".docx", typeDocx);
+            parserMapping.Add(".docm", typeDocx);
+            parserMapping.Add(".dotx", typeDocx);
+            parserMapping.Add(".dotm", typeDocx);
             #endregion
 
             var typeRtf = new List<Type>();
@@ -79,7 +86,7 @@ namespace Toxy
 
             var typePdf = new List<Type>();
             typePdf.Add(typeof(PDFTextParser));
-			typePdf.Add(typeof(PDFDocumentParser));
+            typePdf.Add(typeof(PDFDocumentParser));
             parserMapping.Add(".pdf", typePdf);
 
             var typeHtml = new List<Type>();
