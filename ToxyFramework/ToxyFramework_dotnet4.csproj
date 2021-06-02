@@ -133,7 +133,7 @@
     <PackageReference Include="iTextSharp" Version="5.5.13.2" />
     <PackageReference Include="LumenWorksCsvReader" Version="4.0.0" />
     <PackageReference Include="MsgReader" Version="3.12.2-datadiode-6-gd45240e-Release" />
-    <PackageReference Include="NPOI" Version="2.5.2-datadiode-26-g97ea8e9a-Release" />
+    <PackageReference Include="NPOI" Version="2.5.2-datadiode-27-g391c0c1b-Release" />
     <PackageReference Include="RtfDomParser" Version="1.0.0" />
     <PackageReference Include="TagLibSharp" Version="2.2.0-datadiode-1-g33d478c-Release" />
     <PackageReference Include="Thought.vCards" Version="1.0.0-datadiode-6-gcb1c914-Release" />
